@@ -1,0 +1,232 @@
+/* ============ RESET & BASE STYLES ============ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* ============ MAIN LAYOUT ============ */
+.hee {
+  font-family: "Orbitron", "Share Tech Mono", monospace;
+  font-weight: 400;
+  background-color: #699a69;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  flex: 1;
+  gap: 15px;
+}
+
+/* ============ TIMER BOX ============ */
+.back {
+  background-color: #76ac88;
+  border-radius: 25%;
+  width: 90%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  min-height: 250px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.main {
+  color: white;
+  font-size: clamp(45px, 12vw, 110px);
+  margin: 0;
+  padding: 0;
+}
+
+/* ============ TIME DISPLAY ============ */
+p {
+  display: inline;
+  margin: 0 2px;
+}
+
+#hh {
+  padding-bottom: 3px;
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  background-color: white;
+  border: none;
+  border-radius: 30%;
+  padding: 10px 15px;
+  margin: 3px;
+  height: 45px;
+  font-size: 16px;
+  cursor: pointer;
+  touch-action: manipulation;
+   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* ============ INPUT & TODO LIST ============ */
+#input {
+  display: block;
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 16px;
+  border: 2px solid #699a69;
+  border-radius: 5px;
+}
+
+#input:focus {
+  outline: none;
+  border-color: #557755;
+  box-shadow: 0 0 5px rgba(85, 119, 85, 0.3);
+}
+
+#words {
+  display: block;
+  font-family: "Times New Roman", serif;
+  width: 100%;
+  max-width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  padding: 12px;
+  margin: 8px auto;
+  max-width: 90%;
+  border-radius: 5px;
+  word-wrap: break-word;
+  font-size: clamp(12px, 4vw, 16px);
+}
+
+/* ============ DELETE BUTTON ============ */
+.delete-btn {
+  background: none;
+  border: none;
+  color: black;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: darkred;
+}
+
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* Tablets (iPad - 768px and below) */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .back {
+    width: 85%;
+    min-height: 280px;
+  }
+
+  .main {
+    font-size: clamp(40px, 10vw, 80px);
+  }
+
+  .btn {
+    padding: 8px 12px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  #input {
+    width: 85%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .todo-item {
+    font-size: 14px;
+    padding: 10px;
+    max-width: 85%;
+  }
+}
+
+/* Phones (480px and below) */
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .back {
+    width: 95%;
+    min-height: 240px;
+    margin: 8px auto;
+  }
+
+  .main {
+    font-size: clamp(32px, 9vw, 60px);
+  }
+
+  .btn {
+    padding: 6px 10px;
+    height: 36px;
+    font-size: 12px;
+    margin: 2px;
+  }
+
+  #input {
+    width: 95%;
+    max-width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .todo-item {
+    font-size: 12px;
+    padding: 8px;
+    margin: 6px auto;
+    max-width: 95%;
+  }
+
+  .delete-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0 1px;
+  }
+}
